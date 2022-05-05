@@ -16,7 +16,8 @@ create table curso (
 create table aluno_curso(
 	aluno_id integer not null references aluno(id),
 	curso_id integer not null references curso(id),
-	primary key (aluno_id, curso_id)
+	primary key (aluno_id,
+curso_id)
 );
 
 create table categoria (

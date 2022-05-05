@@ -1,0 +1,31 @@
+select
+	*
+from
+	curso
+where
+	categoria_id in(
+	select
+		id
+	from
+		categoria
+	where
+		nome not like '% %'
+);
+
+
+select
+	categoria
+from
+	(
+	select
+		categoria.nome as categoria,
+		count(curso.id) as numero_cursos
+	from
+		categoria
+	join curso on
+		curso.categoria_id = categoria.id
+	group by
+		categoria
+) as categorias_cursos
+where
+	numero_cursos > 3;
