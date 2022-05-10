@@ -1,0 +1,12 @@
+select trim(upper(concat(primeiro_nome, ' ', ultimo_nome))) as nome_completo from aluno;
+
+---now() = pega o horário atual e o :: faz conversão de tipo, nesse caso de timestamp para date---
+select trim(upper(concat(primeiro_nome, ' ', ultimo_nome))) as nome_completo, now()::DATE, data_nascimento from aluno;
+
+select trim(upper(concat(primeiro_nome, ' ', ultimo_nome))) as nome_completo, extract(year from age(data_nascimento)) from aluno;
+
+select pi();
+
+select to_char(now(), 'DD, MONTH,YYYY');
+
+select to_char(125.5:: real, '999D99');
