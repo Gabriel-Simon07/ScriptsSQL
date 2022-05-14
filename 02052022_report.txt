@@ -30,3 +30,14 @@ order by
 	numero_alunos 
 desc
 limit 1;
+
+select 
+	categoria.id
+as 
+	categoria_id, vw_cursos_por_categorias.* 
+from 
+	vw_cursos_por_categorias
+join
+	categoria 
+on
+categoria.nome = vw_cursos_por_categorias.categoria;
